@@ -1,0 +1,283 @@
+1) Angular - Angular is a popular, open-source front-end javascript framework developed by google.it is primarily used to build single page applicaions and dynamic web applications. angular utilize typescript and provide a structured way to develop web applications.
+features of angular - 
+i) Component-based Architecture
+ii) Declarative Templates
+iii) Two-way Data Binding
+iv) Dependency Injection
+v) Routing
+vi) Directives
+vii) Services
+viii) Rxjs and Obsrvables
+ix) Forms
+x) CLI(Command Line Interface)
+xi) Lazy Loading
+xii) Testing
+
+2) What is a single page application - Single page application is a type of web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire pages from the server.
+
+3) Components - Components are the fundamental building blocks of angular application.it is a part of the user inteface. each component typically consists of the following key elements - 
+                      @Component({
+                        selector:'app-component',
+                        templateUrl:'./app-component.htnl',
+                        styleUrls:['./app-component-css']
+                      })
+
+4) Templates - Template is a part of the component that defines the view or the UI structure. it is written in html.and they are a combination of satndard HTML markup language and angular syntax, which allows for dynamic data display and interaction.
+there are some key features of templates -
+i) Data Binding
+ii) Directives
+iii) Event Binding
+iv) Pipes
+v) Template Expressions
+vi) Template Refrence Variables
+vii) ngIf, ngFor and ngSwitch
+
+
+
+5) Interceptors - In angular inteceptors are powerfull mechanism.interceptors are powerfull feature provided by HttpClient module that allow you to intercept and modify http request and response before they sent or after they are recieved. they function is a middleware between your appliaction and backend server.
+features
+i) Modify request
+ii) Handle response
+iii) Catch errors
+iv) Chain interceptors
+v) Global error handling
+vi) Adding authorization token to request
+vii) Retrying failed request
+
+command to create interceptors "ng g interceptor auth"
+
+6) Directives - Directives are special classes in angular that allow you to manipulate the DOM, and modify appearence or behavior of elements. there are three types of directives:-
+i) Component Directives   (A directive with a template. Technically component is a directive).
+created using @Component
+
+syntax-:
+              @Component({
+                  selector:'app-example',
+                  template:`<p>Hello World, I am a component directive</p>`
+                  styleUrl:['app-example.css']
+              })
+
+ii) Structural Directives (Change the structure/layout of the DOM. They add or remove elements from the DOM.Use s '*' prefix in templates eg. *ngIf, *ngFor, *ngSwitch).
+
+syntax -:
+          <p *ngIf='isVisible'>You can see if visible is true</p>
+
+a) *ngIf -  Conditionally add or removes an elements from the DOM based on the boolean expression.
+b) *ngFor - Repeats a block of HTML for each item in a collection.
+c) *ngSwitch - Rendering different elements based on a matching conditions.
+
+iii) Attribute Directives (Change the appearcence or behaviour of an element, Don't add or remove elemnets but alter the elements. eg. ngClass, ngStyle, ngModel).
+
+syntax -:
+      <p [ngStyle]="{color:'red',fontSize:'10px'}">Styles text</p>
+
+a) ngClass - Dynamiccaly applies CSS classes to an elements.
+b) ngStyle - Dynamically applies inline styles to an element.
+c) ngModel - Facilitates two-way data binding for form elements. 
+
+we can create custom directives 'ng g directive highlight'
+
+ Summary Table
+
+                  Directive Type	       Selector Syntax	                  Purpose
+
+                  Component	             selector: 'app-root'	             Create reusable UI blocks
+                  Structural 	           *directiveName	                   Add/remove elements from DOM
+                  Attribute        	      [directiveName]	                 Change appearance/behavior
+
+7) Decorators are a special types of functions, predefined with the '@' symbol. decorators are the way to provide extra information to a classes, methods, properties, parameters.
+
+There are three types of decorators -:
+i) Class decorators
+ii) Property decorators
+iii) Method decorators
+iv) Parameters decorators
+
+i) Class decorators -: Applied to class declarations to provide metadat about the class itself.
+there are three types of class decorators
+a) @component -: Define a class as an angular component, providing metadata like the selector, template, styles.
+example - 
+                    @Component({
+                      selector: 'app-hello-world',
+                      template: '<h1>Hello World!</h1>',
+                      styleUrls: ['./hello-world.component.css']
+                    })
+
+b) @NgModule - Define a module in angular, encapsulating components, directives, services and pipes modules.
+
+example -:
+                  @NgModule({
+                    declarations: [AppComponent],
+                    imports: [BrowserModule],
+                    providers: [],
+                    bootstrap: [AppComponent]
+                  })
+
+c) @Injectable - Marks a class as available for dependency injection
+
+ii) Property decorators - Applied to properties within a class
+There are three types of properties decorators -
+a) @Input() - Allowing data to be passed from parent component to a child component.Its a way to bind a value from the parent to the child component's property.
+child component - 
+                export class HeroComponent {
+                  @Input() heroName:any;
+                }
+
+parent component -
+                  <app-hero [heroName]='parentHeroName'></app-hero>                  
+b) @Output() - Allowing a child component to emit events that parent can listen to. It enables two way communication.
+child component - 
+                   export class HeroComponent {
+                     @Output() heroName = new EventEmmiter<any>();
+                      sendData(){
+                        this.heroName.emit('Hello world');
+                      }
+                    }
+
+parent component - 
+                    <app-hero (heroName)='parentHeroName($event)'></app-hero>
+
+iii) Method Decorators - Applied to methods within a class.
+There are three types of method decorators
+a) @HostListener() - Allows directives and componentsto listen events on the host element.its useful for handling DOM events directly.
+features of @HostListener 
+ - Event Binding (Listens to DOM events like click, mouseenter etc..)
+ - Custom DOM Event Handling (Can be used for a wide range of event handling scenarios inside    
+   directives).
+                            @Directive({
+                              selector: '[appHighlight]'
+                            })
+                            export class HighlightDirective {
+                              @HostListener('mouseenter') onMouseEnter() {
+                                console.log('Mouse entered');
+                              }
+
+                              @HostListener('mouseleave') onMouseLeave() {
+                                console.log('Mouse left');
+                              }
+                            }
+b) @ViewChild()/@ViewChildren() - Queries for elements or components within the component's view;
+iv) Parameter Decorator -  Applied to parameters within a class constructor.
+- @Inject - (Manually specified a dependency to be injected).
+
+8) Routing -  Routing in angular is a mechanism that enables navigation between different components or views within a single page apllication(SPA). It allows the application to dnamically load and display different content based on URL path,without full page relaod.
+key features of routing - 
+i) Angular router module - Routing functionality provided by the @angular/router module.
+ii) Routes - Routes are defined as an array of objects, where each object maps a URL path to a specific component 
+    that should be displayed when that path is active.
+iii) Router Outlet - The <router-outlet> directive acts as a palceholder in the application template where components 
+    associated with the active route are dynamically rendered.
+iv) Router Links - The routerLink directive is used to create navigation links within the application.
+v) Route Matching Strategies - Angular support different route matching strategies like - 'prefix, full'.
+vi) Route Parameters and Query Params - Information can be passed between components through route parameters.
+vii) Guards - Route guard can be used to control access to routes based on centain consitions (e.g. authentication, 
+     authorization).
+viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving initial application load times by 
+      loading the necessary code when a specific route is activated.
+
+9) Lifecycle Hooks - Lifecycle Hooks are methods that angular calls at specific points during the lifecycle 
+   of the component or directive.
+   There are 8 types of lifecycle hooks - 
+   i)ngOnChanges() - This hook is called whenever an input property of a component changes.itscalled before 
+     ngOnInit().
+   ii) ngOnInit() - This hook is called once the component is initialized.it runs once after the first 
+       ngOnChanges, and is a good place to put iitialization logic.
+
+   iii) ngDoCheck() - This hook is called during every change detection cycle (it's called whenever angular 
+        checks for changes).
+   iv) ngAfterContentInit() - This hook ia called once after angular has projected content into the component.
+   v) ngAfterContentChecked() - This hook is called after every change detection cycle on the content 
+      projected into the component.
+   vi) ngAfterViewInit() - This hook is called once after the component view and child view's are initialized.
+   vii) ngAfterViewChecked() - This hook is called after every change detection cycle for the component's 
+        view and child views.
+  viii) ngOnDestroy() -  This hook is called just before angular destroy the component. It's perfect place to 
+        clean up resources such as subscription, timers, or event listeners to avoid memory leaks.
+
+10) Auth Guards - Auth Guards are used to protect routes by controlling the access to certain pages based on  
+    the user's authentication and authorization status. They act as "gatekeepers' that decide if a user can 
+    access a specific route or if they should be redirected to a login page or error page.auth guards are part of angular's Router module.
+    there are 4 types of auth guards - 
+    i) CanActivate - Decides if a route can be activated(accessed).protecting a route so only logged-in users 
+       can access it.
+    ii) CanActivateChild - Protcting a parent route and all of its child routes e.g. - user profile with 
+        several sections.
+    iii) CanLoad - Preventing unauthorized users from even attempting to load a module.
+    iv) CanDeactivate - Preventing users from accientally navigating away from a page with unsaved data e.g. 
+        when user is editing a form.
+     They are commonly used for authentication, authorization
+        command --'ng generate guard auth'
+
+11)  Interceptors - Interceptors are part of the HTTP client module and provide a mechanismto transform HTTP 
+     request and responses before they are sent or received.they are used to modify and haldle HTTP requests and responses globally.
+     interceptors are typically used for - 
+    i) Adding Headers (authentication tokens)
+    ii) Logging (HTTP requests and responses)
+    iii) Error Handling (for HTTP requests)
+    iv) Modifying request/response data
+    v) Retrying failed requests
+    vi) Handling authentication and authorization flows.
+
+12) Transpiler - Transpiler is tool that converts code written in one programming language into equivalent 
+    code in another language.
+    in another words we can say that transpiler is a tool taht convert typescript code into plain javascript, which is the language browsers understand.
+
+    how transpilation works in angular- 
+    i) TypeScript to JavaScript conversion
+    ii) Bundling
+    iii) Minification and Optimization
+    iv) AOT (Ahead-of-Time) Compilation
+    v) Source Maps
+
+13) Difference between constructor and ngOnInit 
+    In angular, both constructor and ngOnInit are used for initializing the component, but they serve different purpose and are invoked at different points in the component lifecycle.    
+    i) Constructor - The constructor is part of the typescript class, and it's used for initializing class   
+       properties and injecting dependencies.
+       it is the fiest method that is called when instance of a class is created.
+    ii) ngOnInit - It is a lifecycle hook that is invoked after constructor.this method is called after 
+        angular has initialized all the input properties and after the first change detection cycle.
+        examples include - 
+       - Fetching data from api's
+       - Setting up subscriptions to observables
+
+      key differences - 
+
+      features       constructor                                  ngOnInit()
+
+      Origin         Standard javascript/typescrpt                Angular lifecycle hook
+      Call Order     First, when the class instance is created    After the constructo and input 
+                                                                  initialization
+      Purpose        Dependecy injection, basic property          Complex initialization, data fetching, DOM 
+                     initialization                               interaction, logic relying on @Input()  
+      Input          @Input properties are not available          @Input properties are available
+      Availability               
+
+14) Difference between <ng-container> and <ng-template>
+    In angular, both <ng-container> and <ng-template> are used to handle template rendering without adding extra DOM elements, but they serve different purposes.
+
+    i) <ng-container> - is a structural directive in angular used to group elements together without adding extre DOM elements. when you yo want to apply structural directives but you don't want an extra element in the DOM.(e.g div, span)
+    syntax -
+                  <ng-container *ngIf="isVisible">
+                  <p>This content is conditionally visible.</p>
+                  </ng-container>
+    
+    ii) <ng-template> - It defines a template block that is not rendered directly but can be initiated and  
+        inserted into DOM dynamically
+                          
+Key Differences Summarized:
+Feature         ng-container                                     ng-template
+
+Primary Role    Logical grouping for structural directives       Defining reusable template blocks
+
+Direct          Not rendered in the DOM                          Not rendered directly; requires instantiation
+Rendering                                                                 
+Usage            Applied directly with structural directives       Used with structural directives (e.g., 
+                                                                   *ngIf else, *ngFor empty) or *ngTemplateOutlet
+
+Example          html<ng-container *ngIf="condition">              html<ng-template #myTemplate>
+                 <p>Content 1</p> <p>Content 2</p>                 <p>Template Content</p> 
+                  </ng-container>                                  </ng-template>
+                                                                   <div *ngIf="condition; else myTemplate">Main Content</div>
+  
+    
+  
