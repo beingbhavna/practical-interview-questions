@@ -8,16 +8,16 @@
 // 2) function hoisting
 
 // example of variable hoisting with var keyword
-x = 5;
+
 console.log(x); //output : 5
-var x;
+var x = 5;
 
 // Note : variable hoisting it's valid for 'var' keyword, it's not valid for let, const keyword 
 
 // example of variable hoisting with let,const keyword
-x = 5;
+
 console.log(x); // Uncaught ReferenceError: Cannot access 'x' before initialization
-let x;
+let x = 5;
 
 // OR
 console.log(x); // Uncaught ReferenceError: x is not defined

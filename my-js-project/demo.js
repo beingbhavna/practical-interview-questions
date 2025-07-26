@@ -68,9 +68,9 @@ function bubbleSort(array) {
 }
 
 var numbers = [12, 10, 15, 11, 14, 13, 16];
-bubbleSort(numbers);
-console.log(numbers);
+console.log(bubbleSort(numbers));
 
+//output : [10, 11, 12, 13, 14, 15, 16]
 
 //sum of two numbers
 // ---------------------------
@@ -133,7 +133,7 @@ maxNumber();
 // ---------------------------
 let d = (12, 23, 45, 65, 89, 21, 98)
 function maxNumber() {
-  return Math.max(c);
+  return Math.max(d);
 }
 maxNumber();
 //output : 98
@@ -144,7 +144,7 @@ maxNumber();
 // ---------------------------
 let arr = [12, 23, 45, 65, 86, 21, 98]
 function arrOfEvenNumber() {
-  return c.filter(res => res % 2 === 0)
+  return arr.filter(res => res % 2 === 0)
 }
 arrOfEvenNumber();
 //output : [12, 86, 98]
@@ -153,10 +153,10 @@ arrOfEvenNumber();
 // ---------------------------
 
 let array = [12, 23, 45, 65, 86, 21, 98]
-function arrOfEvenNumber() {
-  return c.filter(res => res % 2 === 0).reduce((sum, num) => sum + num, 0)
+function sumOfEvenNumber() {
+  return array.filter(res => res % 2 === 0).reduce((sum, num) => sum + num, 0)
 }
-arrOfEvenNumber();
+sumOfEvenNumber();
 //output : 196
 
 //calculate a factorial of a given number
@@ -196,3 +196,39 @@ function findLargestElement() {
 }
 findLargestElement();
 //output : 101
+
+
+// find duplicate number without using predefined function in js
+function findDuplicate(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        return arr[i]; // Duplicate found
+      }
+    }
+  }
+  return null; // No duplicate found
+}
+// Example usage:
+const arr1 = [3, 5, 6, 2, 8, 5, 1];
+console.log(findDuplicate(arr1));  // Output: 5
+
+
+//remove duplicate numbers from array without using any predefined function in js
+
+function removeDuplicates(arr) {
+  let unique = [];
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < unique.length; j++) {
+      if (arr[i] === unique[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) unique[unique.length] = arr[i];
+  }
+  return unique;
+}
+// Example usage:
+console.log(removeDuplicates([4, 2, 5, 2, 3, 4, 1, 5]));  // Output: [4, 2, 5, 3, 1]
