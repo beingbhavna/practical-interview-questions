@@ -1,0 +1,86 @@
+1) Core Principles of react.js
+  React is one ofthe most popular javascript library for building user interface, especially for single-page applications where the UI needs to be fast, dynamic and responsive.Developed by facebook.
+
+ i) Reacts Core Principles - 
+
+ * Component-Based Architecture - 
+  - React is all about components. A react application is typically built as a tree of components, where each component is reusable, self-contained unit that renders a portion of UI.
+  - Components can be either stateful (managing their own state) oor stateless (receiving data from props).
+  Components can be functional or class-based, though modern react encoureges functional components (especially with hooks).
+  example of a functional component - 
+                                    function welcome(props){
+                                        return <h1>Hello, {props.name}</h1>;
+                                    } 
+example of class-based component - 
+                                    clsss Welcome extends React.Component{
+                                        render(){
+                                            return <h1>Hello, {this.props}</h1>
+                                        }
+                                    }
+ * Declarative UI -
+  - In React you describe what the UI should look like at the given time, and React takes care of updating the DOM when state of the application changes.
+  
+ * One-Way Data Flow - 
+  - React follows a unidirectional data flow. this means data flows in one direction - from parent components to child components through props.
+  - Components can manage their own state (data that can change over time) and pass it down to children via props.
+
+ * Virtual DOM -    
+  - React uses virtual DOM to optimize rendering.
+  - Instead of manipulating the real DOM directly, React create a virtual representation of the DOM(a lightweight in-memory copy) that it can update efficiently.
+
+ ii) Reacts Core Concept -
+
+  * JSX (Javascript XML) -
+   - React uses JSX, a syntax extension that allows you to write HTML structure in javascript.
+   - JSX looks like HTML but is actually syntactic sugar for React.createElement calls.
+   - It makes it easier to define the UI inside your javacript code.
+   example of JSX      -    const element = <h1>Hello, world!</h1>
+   JSX is compiled     -    const element - React,createElement("h1", null,"Hello, world!");
+   
+ * Components (Functional and Class Component) - 
+  - Functional Components - These are simpler and recommended approach in modern React with hooks.
+                          - A function that returns JSX.
+                          - Have access to props, but manage state and lifecycle using hooks.
+  - Class Component - Older style of components, though ther are still widely used.
+                    - Have more boilerplate code but can manage state and lifecycle methods directly. 
+* State - 
+ - State refers to data that can change over time and influences the rendering of a component.
+ - Each component have its own state, which makes component stateful.
+ - In class component, state is managed using "this.state" and updating using "this.setState()".
+ - In functional components, state is managed using the "useState" hook .
+ example with useState (Functional Component) -    
+                                function counter(){
+                                    const [count, setCount]=useState(0);
+                                    return (
+                                    <div>
+                                    <p>You Clicked {count} times</p>
+                                    <button onClick = {()=>setCount(count + 1)} >Click Me</button>
+                                    </div>
+                                    );
+                                } 
+* props - 
+   - props (short for "properties") are used to pass data from a parent component to a child component.
+   - props are read-only, meaning a child component can not modify the props it receives from its parents.
+   
+* Lifecycle Methods ( Class Components) -
+  - Class components have lifecycle methods that allow you to hook into different states of a component's life, such as mounting, updating and unmounting.
+  - Common lifecycle methods include componentDidMount(), shouldComponentUpdate(),and componentWillUnmount().
+
+* Hooks - 
+ - Hooks are functions that let you use react features (like state and lifecycle methods) in functional components
+ - useState : Used to add state to functional components.
+ - useEffect : Replace lifecycle methods in functional components for side effects like data fetching or subscribing to external systems.
+
+* Context API - 
+ - The context API allows you to share state across the component tree without passing props.
+ - Useful for global data like themes, authenticaton, or language preferences.
+
+iii) React's Ecosystem - 
+ * React Router - 
+  - React Router is used for handling navigation and routing in react applications.
+  - It allows you to define URL paths and render corresponding components.
+ * State Management Libraries -
+  - Redux
+  - Cotext API 
+
+                    

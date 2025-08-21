@@ -931,3 +931,89 @@ ii) Dynamic Typing (or weak typing) -
    * Variable can change types as the program runs, based on the value they are assigned.
    * You don't need to declare the type of variable explicitly.
    * The varibale can hold multiple types like JavaScript, a variable can take number, characters etc.
+
+
+19) Javascript Fundamentals - javascript fundamentals are the core concepts and features of the language that are essential to understanding how to write,debug, and maintain javascript code.
+
+i) Variables and Data Types
+ * Variables - Store values (e.g. let, const, var).
+ * Primitive Data Types - 
+   - string : Text data e.g. "Hello".   ( let name = "Alice";)
+   - number : Numeric data e.g. 23,34,45.6     (const age = 25;)
+   - boolean : true or false   (let isActive = true;)
+   - undefined : A variable that has not been assigned a value.
+   - null : A delibirate non-value.
+   - symbol : Unique idetifires (New in ES6).
+   - bigint : For large integer.
+
+ii) Operators -  
+ * Arithmetic Operators (+, -, *, /, %, ++, --)   
+ * Assignment Operators (=, +=, -=, *=, /=)
+ * Comparison Operators (==, ===, !=, !==, <, >, <=, >=)
+ * Logical Operators (&&, ||, !)
+ * Ternary Operators (condition ? expr1 : expr2)
+
+iii) Control Structures
+ * Conditionals : if, else if, else, switch
+ * Loops : for, while, do....while, forEach (array-specific)
+
+iv) Functions - 
+ * Function Declarations - A reusable block of code.
+ * Function Expression : Functions assigned to varianles.
+ * Arrow Functions (ES6) : Concise syntax for functions.
+ * Parameters and Return Values : Functions can accept input and out result.
+
+v) Arrays -
+ * Collections of values
+ * Array Methods : push(), pop(), shift(), unshift(), map(), filter(), reduce().
+ 
+vi) Objects -
+ * Collections of key-value pairs.
+  * Can contain primitive types, arrays, or other objects.
+
+vii) Scope and Closures
+ * Global Scope : Accessible anywhere in the code.
+ * Function Scope : Accessible only inside the function.
+ * Block Scope : With  let and const variable are limited to the block(enclosed by { }).
+ * Closure : A function that "remembers" its lexical scope even when executed outside that scope.
+ 
+viii) Asynchronous Javascript
+ * Callback : Functions passed as arguments to other functions.
+ * Promise : Used to handle asynchronous operations.
+ * Async/Await : Cleaner syntax for dealing with promises.
+
+ promise example -                  const fetchData = new Promise((resolve,reject)=>{
+                                      setTimeout(()=>resolve("Data Fetching...."),1000);
+                                     });
+                                     fetchData.then((data)=>console.log(data)); //data fetched
+
+Async/Await example -              async function fetchData(){
+                                    let response = await fetch("https://api.example.com");
+                                    let data = await response.json();
+                                    console.log(data);
+                                    }                                     
+
+ix) Error Handling - 
+ * Try/Catch : Used to handle exceptions.
+
+x) DOM Manipilation (for web development)
+ * Selecting Elements : document.getElementById("id"), document.querySelector().
+ * Changing Content : innerHTML, textContent.
+ * Event Listener : addEventListener()
+
+xi) ES6+ Features -
+ * Template Literals : String interpolation using backtick(``).
+ * Destructuring : Extract values from arrays or objects.
+ * Spread and Rest Operators : (...)
+ * Modules : import and export. 
+
+xii) Classes and inheritance - 
+ * Classes : Used for object-oriented programming.
+ * Constructor & Methods : Define the properties and actions for an object.
+ * Inheritance : Classes can inhert from other classes.
+
+ xiii) Evant Loop
+ 
+  
+
+
