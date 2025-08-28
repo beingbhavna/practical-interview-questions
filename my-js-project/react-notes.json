@@ -41,7 +41,7 @@ example of class-based component -
   - Functional Components - These are simpler and recommended approach in modern React with hooks.
                           - A function that returns JSX.
                           - Have access to props, but manage state and lifecycle using hooks.
-  - Class Component - Older style of components, though ther are still widely used.
+  - Class Component - Older style of components, though there are still widely used.
                     - Have more boilerplate code but can manage state and lifecycle methods directly. 
 * State - 
  - State refers to data that can change over time and influences the rendering of a component.
@@ -49,6 +49,7 @@ example of class-based component -
  - In class component, state is managed using "this.state" and updating using "this.setState()".
  - In functional components, state is managed using the "useState" hook .
  example with useState (Functional Component) -    
+                               import {React} from 'react'
                                 function counter(){
                                     const [count, setCount]=useState(0);
                                     return (
@@ -58,18 +59,19 @@ example of class-based component -
                                     </div>
                                     );
                                 } 
+                                import default counter;
 * props - 
    - props (short for "properties") are used to pass data from a parent component to a child component.
    - props are read-only, meaning a child component can not modify the props it receives from its parents.
    
+* Hooks - 
+   - Hooks are functions that let you use react features (like state and lifecycle methods) in functional components
+   - useState : Used to add state to functional components.
+   - useEffect : Replace lifecycle methods in functional components for side effects like data fetching or subscribing to external systems.
+
 * Lifecycle Methods ( Class Components) -
   - Class components have lifecycle methods that allow you to hook into different states of a component's life, such as mounting, updating and unmounting.
   - Common lifecycle methods include componentDidMount(), shouldComponentUpdate(),and componentWillUnmount().
-
-* Hooks - 
- - Hooks are functions that let you use react features (like state and lifecycle methods) in functional components
- - useState : Used to add state to functional components.
- - useEffect : Replace lifecycle methods in functional components for side effects like data fetching or subscribing to external systems.
 
 * Context API - 
  - The context API allows you to share state across the component tree without passing props.
@@ -84,3 +86,60 @@ iii) React's Ecosystem -
   - Cotext API 
 
                     
+2) Difference between functional and class components
+  * Functional Component - These are simpler and recommended approach in modern React with hooks.Functional        
+                          components are written as javascript functions.A function that returns JSX.They can use hooks (like useState, useEffect) to manage state and side effects. These components are more lightweight and are typically used when you don't need lifecycle methods or advanced features.
+  * Class Component -    Older style of components, though there are still widely used.Have more boilerplate code 
+                         but can manage state and lifecycle methods directly.These are ES6 classes that extend React.component.They can have lifecycle methods (e.g componentDidMount, componentDidUpdate, coponentWillUnmount) to handle side effects and can maage state using 'this.setState'.
+
+3) Tokens in React.js
+    Tokens in React can either be related to authentication (like JWTs for secure API access) or JSX structure (like tages,attributes, and components) The term 'token' can refer to two main concepts :
+
+    i) Authentication Tokens -                        
+       * In web devalopment, tokens are commonly used for authentication and authorization. The most widely used type of token is the JWT (JSON Web Token), which is securely transmit information between the client (React-app) and the server. JWT tokens contain three parts : header, payload, and signature.
+       * Another type of token is the OAuth token,often used in third party authentication flows. OAuth tokens allow the react app to intract with external APIs (e.g. Google, Facebook) without exposing user credentials.
+       * These tokens are usually stored in sessionStorage, localStorage, or cookies, depending on security requirements.
+       
+   ii) JSX Tokens - 
+       In React 'tokens' also refer to the building blocks of JSX synatx, which is used to define the UI. JSX allows developers to write HTML-like elements inside javascript.The main token in JSX include :
+       * HTML tags - <div>, <h1>.
+       * Attributes - className, onClick, style etc.
+       * Expressions - Inside curly braces {} (e.g. {user.name}).
+       * React Components - (e.g. <MyComponent/>).
+       * Fragments - (denoted as <> </>)
+
+3) Stateful and Stateless - 
+  i) Stateful Components - 
+   * Definition - A stateful component is a component that manage its own internal state. This means that the component can maintain and update its own data, which can influence its rendering.
+   * State Management - These components utilize state to store data that can change over time. State is typically managed using the 'useState' hook (for functional component) or through the 'this.state' and 'this.setState' methods (for class components).
+   * Usage - Stateful component are used when a component needs to handle dynamic data, such as user input, form values, toggling UI elements, or interacting with APIs.       
+       eg.                                const Counter =()=>{
+                                            const [count,setCount] = useState(0);  // stateful component
+                                            return(
+                                            <div>
+                                            <p>Count : {count}</p>
+                                            <button onClick = {() => setCount(count+1)}>Click Me</button>
+                                            </div>
+                                            );
+                                          };
+
+ ii) Stateless - 
+  * Definition - A stateless component (also called a presentational component) is a component that does not manage its own state. It only receive data from props and displays it. These components focus on presenting the UI based on the input provided, and they do not handle any data logic themselves.
+  * State Management - Stateless components rely entirely on props to recieve data and render UI.Since they don't manage any internal state, they are simpler and easier to test.
+  * Usage - Stateless components are ideal for when a component's behaviour dosen't change based on user interaction or internal logic - just receiving and displaying data.
+
+  Key Differences:
+   State Management:
+    - Stateful: Manages its own state using useState or this.state.
+    - Stateless: Does not have its own state; relies on props for data.
+   Responsibility:
+    - Stateful: Typically responsible for handling logic, user interaction, or API calls.
+    - Stateless: Responsible for displaying data without modifying it.
+   Use Case:
+    - Stateful: Used when a component needs to track user interactions or dynamic data.
+    - Stateless: Used for components that only render data passed through props.
+
+ 3) From componentDidMount, shouldComponentUpdate, and componentWillUnmount which method render first   
+   * componentDidMount runs first but only once.
+   * shouldComponentUpdate is only relevant on updates, not on the first mount.
+   * componentWillUnmount runs only once, at the end.
