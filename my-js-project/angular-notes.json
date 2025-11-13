@@ -37,7 +37,7 @@ modules are defined using @NgModule decorators
 * Dependency injection - (Services and providers).
 * Component management - (Which components are the part of the module).
 * Routing - (Configuring navigation for the application).
-* Pipes and Directives - (cutom pipes and decorators that can be shared across components).
+* Pipes and Directives - (custom pipes and decorators that can be shared across components).
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -80,7 +80,7 @@ syntax-:
                   styleUrl:['app-example.css']
               })
 
-ii) Structural Directives (Change the structure/layout of the DOM. They add or remove elements from the DOM.Use s '*' prefix in templates eg. *ngIf, *ngFor, *ngSwitch).
+ii) Structural Directives (Change the structure/layout of the DOM. They add or remove elements from the DOM.Uses '*' prefix in templates eg. *ngIf, *ngFor, *ngSwitch).
 
 syntax -:
           <p *ngIf='isVisible'>You can see if visible is true</p>
@@ -94,7 +94,7 @@ iii) Attribute Directives (Change the appearcence or behaviour of an element, Do
 syntax -:
       <p [ngStyle]="{color:'red',fontSize:'10px'}">Styles text</p>
 
-a) ngClass - Dynamiccaly applies CSS classes to an elements.
+a) ngClass - Dynamically applies CSS classes to an elements.
 b) ngStyle - Dynamically applies inline styles to an element.
 c) ngModel - Facilitates two-way data binding for form elements. 
 
@@ -108,15 +108,15 @@ we can create custom directives 'ng g directive highlight'
                   Structural 	           *directiveName	                   Add/remove elements from DOM
                   Attribute        	      [directiveName]	                 Change appearance/behavior
 
-8) Decorators are a special types of functions, predefined with the '@' symbol. decorators are the way to provide extra information to a classes, methods, properties, parameters.
+8) Decorators - Decorators are a special types of functions, predefined with the '@' symbol. decorators are the way to provide extra information to a classes, methods, properties, parameters.
 
-There are three types of decorators -:
+There are four types of decorators -:
 i) Class decorators
 ii) Property decorators
 iii) Method decorators
 iv) Parameters decorators
 
-i) Class decorators -: Applied to class declarations to provide metadat about the class itself.
+i) Class decorators -: Applied to class declarations to provide metadata about the class itself.
 there are three types of class decorators
 a) @component -: Define a class as an angular component, providing metadata like the selector, template, styles.
 example - 
@@ -162,7 +162,7 @@ parent component -
 
 iii) Method Decorators - Applied to methods within a class.
 There are three types of method decorators
-a) @HostListener() - Allows directives and componentsto listen events on the host element.its useful for handling DOM events directly.
+a) @HostListener() - Allows directives and components to listen events on the host element.its useful for handling DOM events directly.
 features of @HostListener 
  - Event Binding (Listens to DOM events like click, mouseenter etc..)
  - Custom DOM Event Handling (Can be used for a wide range of event handling scenarios inside    
@@ -193,7 +193,7 @@ iii) Router Outlet - The <router-outlet> directive acts as a palceholder in the 
 iv) Router Links - The routerLink directive is used to create navigation links within the application.
 v) Route Matching Strategies - Angular support different route matching strategies like - 'prefix, full'.
 vi) Route Parameters and Query Params - Information can be passed between components through route parameters.
-vii) Guards - Route guard can be used to control access to routes based on centain consitions (e.g. authentication, 
+vii) Guards - Route guard can be used to control access to routes based on centain conditions (e.g. authentication, 
      authorization).
 viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving initial application load times by 
       loading the necessary code when a specific route is activated.
@@ -201,10 +201,10 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
 10) Lifecycle Hooks - Lifecycle Hooks are methods that angular calls at specific points during the lifecycle 
    of the component or directive.
    There are 8 types of lifecycle hooks - 
-   i)ngOnChanges() - This hook is called whenever an input property of a component changes.itscalled before 
+   i)ngOnChanges() - This hook is called whenever an input property of a component changes.its called before 
      ngOnInit().
    ii) ngOnInit() - This hook is called once the component is initialized.it runs once after the first 
-       ngOnChanges, and is a good place to put iitialization logic.
+       ngOnChanges, and is a good place to put intialization logic.
 
    iii) ngDoCheck() - This hook is called during every change detection cycle (it's called whenever angular 
         checks for changes).
@@ -218,7 +218,7 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
         clean up resources such as subscription, timers, or event listeners to avoid memory leaks.
 
 11) Auth Guards - Auth Guards are used to protect routes by controlling the access to certain pages based on  
-    the user's authentication and authorization status. They act as "gatekeepers' that decide if a user can 
+    the user's authentication and authorization status. They act as 'gatekeepers' that decide if a user can 
     access a specific route or if they should be redirected to a login page or error page.auth guards are part of angular's Router module.
     there are 4 types of auth guards - 
     i) CanActivate - Decides if a route can be activated(accessed).protecting a route so only logged-in users 
@@ -231,7 +231,7 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
      They are commonly used for authentication, authorization
         command --'ng generate guard auth'
 
-12)  Interceptors - Interceptors are part of the HTTP client module and provide a mechanismto transform HTTP 
+12)  Interceptors - Interceptors are part of the HTTP client module and provide a mechanism to transform HTTP 
      request and responses before they are sent or received.they are used to modify and haldle HTTP requests and responses globally.
      interceptors are typically used for - 
     i) Adding Headers (authentication tokens)
@@ -243,7 +243,7 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
 
 13) Transpiler - Transpiler is tool that converts code written in one programming language into equivalent 
     code in another language.
-    in another words we can say that transpiler is a tool taht convert typescript code into plain javascript, which is the language browsers understand.
+    in another words we can say that transpiler is a tool that convert typescript code into plain javascript, which is the language browsers understand.
 
     how transpilation works in angular- 
     i) TypeScript to JavaScript conversion
@@ -268,7 +268,7 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
       features       constructor                                  ngOnInit()
 
       Origin         Standard javascript/typescrpt                Angular lifecycle hook
-      Call Order     First, when the class instance is created    After the constructo and input 
+      Call Order     First, when the class instance is created    After the constructor and input 
                                                                   initialization
       Purpose        Dependecy injection, basic property          Complex initialization, data fetching, DOM 
                      initialization                               interaction, logic relying on @Input()  
@@ -278,7 +278,7 @@ viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving 
 15) Difference between <ng-container> and <ng-template>
     In angular, both <ng-container> and <ng-template> are used to handle template rendering without adding extra DOM elements, but they serve different purposes.
 
-    i) <ng-container> - is a structural directive in angular used to group elements together without adding extre DOM elements. when you yo want to apply structural directives but you don't want an extra element in the DOM.(e.g div, span)
+    i) <ng-container> - is a structural directive in angular used to group elements together without adding extra DOM elements. when you yo want to apply structural directives but you don't want an extra element in the DOM.(e.g div, span)
     syntax -
                   <ng-container *ngIf="isVisible">
                   <p>This content is conditionally visible.</p>
@@ -350,7 +350,7 @@ vi) Customize error messages based on the error type to improve UX.
 
 17) Types of compiler - compilers is tool that converts code written in one programming language into  
     equivalent code in another language.
-    in another words we can say that compiler is a tool taht convert typescript code into plain javascript, which is the language browsers understand.
+    in another words we can say that compiler is a tool that convert typescript code into plain javascript, which is the language browsers understand.
 Angular primarily utilized two types of compilation 
 
 i) JIT (Just-in-Time) - (compilation at runtime)
@@ -422,7 +422,7 @@ Key Differences Between JIT and AOT Compilers -
     Subject - A Subject is a type of Observables that allows multicast(sending values to multiple subscribers) while maintaining its state. Both are powerful tools in RxJS.
     Key characterstics - 
     * Multicasting - When you subscribe to a 'Subject', all the subscribers will receive the same emmitted values.
-    * No Initial Value - A 'Subject' does not maintain any internal state,so if a subcriber subscribe after a value emmitted, it will not receive the previous value - it will onlyreceive new values that are emmitted after it subscribe.
+    * No Initial Value - A 'Subject' does not maintain any internal state,so if a subscriber subscribe after a value emmitted, it will not receive the previous value - it will only receive new values that are emmitted after it subscribe.
     * Can emit new values - You can call next() method on the subject to emit new values. 
    syntax - private mySubject = new Subject<number>();
 
@@ -430,8 +430,8 @@ Key Differences Between JIT and AOT Compilers -
    Key characterstics - 
    * Multicasting - Similars to 'Subject' it can broadcast the emmitted to multiple subscribers.
    * Requires initial value - Must provide initial value when creating a 'BehaviourSubject'.
-   * Remembers last value - It stored last emmitted value and sends it to ant new subscriber.
-   * Stateful - It holds its latest value an will emit thatvalue immediatly when a new subscriber subscribes. 
+   * Remembers last value - It stored last emmitted value and sends it to any new subscriber.
+   * Stateful - It holds its latest value an will emit that value immediatly when a new subscriber subscribes. 
     syntax - private SubjectBehaviour = SubjectBehaviour<any> = new SubjectBehaviour<any>("0"); // Initial value is 0
         or - private SubjectBehaviour = new SubjectBehaviour<any>(""); // Initial value is 0
 
@@ -442,8 +442,8 @@ Key Differences Between JIT and AOT Compilers -
 | **Subscriber Behavior** | New subscribers will not receive any previously emitted values                         | New subscribers receive the last emitted value immediately                                |
 | **Typical Use Cases**   | Used when you don't need to keep track of the latest value (e.g., broadcasting events) | Used when you want the latest value available to new subscribers (e.g., state management) |
 
-20) Observables - For handling asynchronous data Observables and subscriptions ar fundamental concepts. An Observable is a stream of data or events that you can subscribe to, and it represents asynchronous operation over time. Observables can emit values and these values can be of type (such as numbers, objects, oe even errors).
-Observables is like a sata source that can produce values over time such as : 
+20) Observables - For handling asynchronous data Observables and subscriptions are fundamental concepts. An Observable is a stream of data or events that you can subscribe to, and it represents asynchronous operation over time. Observables can emit values and these values can be of type (such as numbers, objects, oe even errors).
+Observables is like a data source that can produce values over time such as : 
 * User Input events (like clicks or key presses).
 * HTTP responses (like data from a REST API).
 * Timer or intevals
@@ -497,12 +497,12 @@ iv) Ecosystem - Javascript boosts a vast ecosystem of frameworks and libraries (
 v) Integration - It integrates seamlessly with HTML (for structure) and CSS (for styling) to create a complete 
    and interactive web experience.
 vi) Asynchromous Nature (Non-Blocking)
-vii) Object-Oriented ans Functional
+vii) Object-Oriented and Functional
 viii) Runs in the browser
 
 2) JavaScript Evaluation - 
 i) Evaluation of expressions in js - (In js expressions are evaluated in a specific order to produce a result. 
-   these can be a simple expressions like numbers, or complex expressions like funtion calls,assignments and conditionals. let a = 5 + 10; )
+   these can be a simple expressions like numbers, or complex expressions like function calls,assignments and conditionals. let a = 5 + 10; )
 ii)  Execution context and call stack -(The environment where code runs and how functions are placed on the call stack)
 iii) Hoisting - (How declarations are moved to the top of their scope).
 iv) Scope and Lexical environment - (How variables are evaluated on their scope).
@@ -522,7 +522,7 @@ ii) - Arrow Function(=>) - Arrow function provide a more concise syntax for writ
           const add = (a, b)=> a + b;
           const greet = name =>`Hello ${name}`;
 
-iii) Template Literals(Template String) - Template literals allow embedding expression inside strings using &{} and support multi-line strings.
+iii) Template Literals(Template String) - Template literals allow embedding expression inside strings using ${} and support multi-line strings.
        const name='Bhavna Sharma';
        const greeting = `Hello ${name}`;
        const multiline = `This is
@@ -568,7 +568,7 @@ x) Map and Set - ES6 introduce two new collection types.
 
 4) Contructors - Before ES6 JS didn't have a build-in class syntax.We used constrctor functions to create objects.A constructor is a special method used within a class to create and initialize objects.It is automatically called when a new instance of the class is created using 'new' keyword.
 Key characterstics - 
-i) Initializarion - The purpose of a constructor is to set up the initial state of a newly created object.
+i) Initialization - The purpose of a constructor is to set up the initial state of a newly created object.
 ii) 'this' keyword - Inside a constructor, 'this' keyword refers to the newly created instance of the class.
 iii) 'new' keyword - Creates a new empty object.returns the new object( unless the constructor explicitly returns another object).
 example -
@@ -623,7 +623,7 @@ iii) const -
                                                     until initialized       until initialized
 | Redeclaration | Yes                             | No                    | No                 |
 
-6) TDZ (Temporal Dead Zone) - Temporal Dead Zone ij javascript refers to a specific period during the execution of the code where variables declared with the 'let', 'const' keywords are inaccessible.
+6) TDZ (Temporal Dead Zone) - Temporal Dead Zone in javascript refers to a specific period during the execution of the code where variables declared with the 'let', 'const' keywords are inaccessible.
 This zone exists between the begninning of the scope( typically a block) where the variable is declared and the actual point of its declaration and initialization within that scope.
 
 in another words we can can say that The Temporal Dead Zone ia a behaviour that occurs in javascript when trying to access variablea declared with 'let', 'const' before they are initialized
@@ -639,7 +639,7 @@ var b = 10;
 
 7) Hoisting - Hoisting is a behaviour in javascript where variable, function and class declarations are moved to the top of their scope during the compilation phase before the code is executed.
 - This means that you can use variable and functions before they are declared in your code.
-- Only declaratins are hoisted not the initialization and assignment.
+- Only declarations are hoisted not the initialization and assignment.
 - 'var' keyword is hoisted, but 'let' keyword is not hoisted.
 
 function hoisting - sayHello(); //output : 'Hello, world'
@@ -650,6 +650,7 @@ function hoisting - sayHello(); //output : 'Hello, world'
             console.log(sayHello()); //output : TypeError : sayHello is not a fuction
             var sayHello(){
               console.log('Hello,world');
+            }
               
 8) IIFE - IIFE stands for Immediate Invoked Function Expressions.IIFE is a javascript function that is defined and executed immediate after its creation.primary purpose of an IIFE is to create a new scope for variables and functions.
 syntax -       (function(){                                        (() => {
@@ -729,7 +730,7 @@ e.g. -                function greet(name.age){
                       newGreet(25); //output : "Hello, my name is Sharma and I am 25 years old".
 
 11) undefined, undeclared and null - 
- i) undefined - Itis a primitive value in JS. It means variable has been declared but not initialized with a value, or a function did not return a value.typeOf 'undefined' and returns 'undefied'.
+ i) undefined - It is a primitive value in JS. It means variable has been declared but not initialized with a value, or a function did not return a value.typeOf 'undefined' and returns 'undefied'.
  undefined is the default value for uninitialized variable and properties.
  Its automatically assigned by javascript when - 
  - A variable is declared but not assigned a value      
@@ -745,11 +746,11 @@ e.g. -                function greet(name.age){
 ii) undeclared - An undeclared variable that has not been defined in the current scope.It means you have not even declared the variable using let,const, or var.If you try to access an undeclared variable, JS will throw a ReferenceError.
 undeclared is when a variable does not exist in the current scope at all.
               console.log(a); // ReferenceError: a is not defined (variable is undeclared)
-iii) null - null is another primitive value in JS, but is represents intentioanl absence or emptiness.(typeOf null is object).
+iii) null - null is another primitive value in JS, but is represents intentional absence or emptiness.(typeOf null is object).
 
 
-| **Concept**              | **`undefined`**                                                      | **`undeclared`**                                                | **`null`**                                                    |
-| ------------------------ | -------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Concept**              | **`undefined`**       | **`undeclared`**         |**`null`**         |
+| ------------------------ | -------------------------------------------------------------------- | 
 | **Definition**           | A value assigned to variables that are declared but not initialized. | A variable that has not been declared in the current scope.     | A primitive value representing intentional "emptiness".       |
 | **Type**                 | `undefined` (primitive type)                                         | Not a valid type (variable doesn’t exist yet).                  | `object` (due to a JavaScript quirk)                          |
 | **When does it occur?**  | - Variable declared but not assigned a value.                        | - Variable is used before declaration.                          | - Explicitly assigned to indicate "no value".                 |
@@ -780,8 +781,8 @@ i) In browser -
 13) Higher order function - A higher order function is a function that either : 
     - Takes one or more functions as arguments,
     - Returns a function as a result.
-These higher oreder function is more powerfull because they allow you to work with functions in a flexible and reusable way.Higher order functions are commonly used in functional programming.
-i) Function that takes another argument as an argument :
+These higher order function is more powerfull because they allow you to work with functions in a flexible and reusable way.Higher order functions are commonly used in functional programming.
+i) Function that takes another function as an argument :
                   function applyOperation(a,b,operation){
                     return operation(a,b);
                   }
@@ -823,7 +824,7 @@ ii) Deep copy - A deep copy creates a new object or array,and recurively copies 
 Deep copy is essential when you need to work with objects or arrays that have nested structures and want to ensure that the original data is unaffected by changes in the copied structure.
 
 iii) Rest operator (...)- The rest operator is used to collect remaining properties or elements from an object or array in to a new object and array.
-for objects : It collects al remaining properties into a new object.
+for objects : It collects all remaining properties into a new object.
 for array : It collects remaining elements into a new array.
       const person = {name:'Bhavna', age:25, city:'Noida'};
       //Rest operartor in object destructuring
@@ -847,7 +848,7 @@ Deep Copy : Copies everything, including nested objects/arrays, ensuring no refe
 Rest Operator : Used for collecting properties or arguments, not copying.
 Spread Operator : Used for copying and spreading values, creates shallow copies.
 
-15) Callback function - A callback() function is simply a function yhat is passed into another function as an argument and is executed later, when asynchronous task is completed. callback function is a higher order function.
+15) Callback function - A callback() function is simply a function that is passed into another function as an argument and is executed later, when asynchronous task is completed. callback function is a higher order function.
  - It is passed as  arguments.
  - executed later
  - can be synchronous or asynchronous 
@@ -860,7 +861,7 @@ callback functions are used for
 * Customization      
 
 16) Promise - A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.Its used to handle asynchronous operations.
-A promise is like a placeholder for a value that is not ye available but will be at some point in the future.
+A promise is like a placeholder for a value that is not yet available but will be at some point in the future.
 once a promise is created, you need to handle it using then(), catch(), or finally().
 
 Features- 
@@ -885,7 +886,7 @@ iii) Rejected - The operation is failed, and promise is rejected with an error o
      });
 
 methods - 
-* .then() - Handles resilved values.
+* .then() - Handles resolved values.
 * .catch() - Handles rejection or errors.
 * .finally() - Executes regardless of success or failure.
 - Async/Await with promises -  
@@ -909,8 +910,8 @@ methods -
               - promise handle multiple asynchronous operations and want to avoid callback hell.
               - use async/await for cleaner syntax.           
 
-| **Aspect**                        | **Callback**                                             | **Promise**                                                   |
-| --------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| **Aspect**                        | **Callback**        | **Promise**     |
+| --------------------------------- | ------------------- | ---------------- |
 | **Nature**                        | Function passed as an argument                           | Object representing eventual completion of async task         |
 | **Error Handling**                | Manually via error-first callback                        | Built-in `.catch()` method                                    |
 | **Syntax**                        | Can lead to nested, hard-to-read code (callback hell)    | Cleaner syntax with `.then()`, `.catch()`, and `.finally()`   |
@@ -1014,6 +1015,19 @@ xii) Classes and inheritance -
 
  xiii) Evant Loop
  
-  
+20) async and await in JavaScript/TypeScript
+i) async Function - An async function is a function that always returns a Promise. The async keyword is used to declare such functions, and it allows the use of await inside them.
+   Syntax:  async function myFunction() {
+             // Function logic here
+            }
+Behavior: When you call an async function, it automatically returns a Promise. If the function returns a value, the Promise resolves with that value. If the function throws an error, the Promise is rejected with that error.
 
+ii) await Expression - The await keyword can only be used inside an async function. It makes JavaScript wait for a Promise to resolve or reject before moving on to the next line of code.
+Syntax: let result = await someAsyncFunction();
 
+Behavior: * await pauses the execution of the function until the Promise is settled (either resolved or rejected).
+        * If the Promise resolves, it returns the result, which can be assigned to a variable.
+        * If the Promise rejects, it throws an error, which can be caught using a try-catch block.
+
+- async functions always return a Promise.
+- await can be used inside async functions to wait for the resolution of a Promise and simplify working with asynchronous code.

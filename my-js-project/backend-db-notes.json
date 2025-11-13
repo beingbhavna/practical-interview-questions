@@ -1,0 +1,147 @@
+1) Difference between primary key and foreign key 
+
+i) Primary key - A primary key is a unique identifier for each record in a database table. it ensures that each record can be uniquely identifiedby its primary key value.There are no duplicate and misiing values are allowed.
+there are some key points of primary key :-
+- Uniqueness : Every value in the primary kry column must be unique. No two rows have same primary key value.
+- Not Null : Primary kry can not have NULL values. every record must have a value for the primary key.
+- Single or Composite : Primary key can consist of a single column (a simple primary key) or multiple columns (a composite primary key).
+
+    CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+    );
+
+ii) Foreign Key - A foreign key is a column (or set of columns) in one table that links to the primary key of another table.it creates a link between two tables.A value in the foreign key column must exist in the referenced primary key column of the other table. 
+there are some points of foreign key :-
+- References Another Table : A foreign key is always linked to the primary key of another table ( or some times to a unique key in that table).
+- Can Contain Nulls : Foreign key can contain NULL values unless explicitly restricted (e.g. with NOT NULL).
+- Enforces Referencial Integrity : If a foreign key value does not match a primary key an error is raised.
+
+   CREATE TABLE grades (
+    grade_id INT PRIMARY KEY,
+    student_id INT,
+    grade CHAR(1),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+    );
+
+2) LINQ - LINQ stands for Language Integrated Query is a feature of .NET. that allows to developers to query collections(array,lists,databases,XML documents,etc.).LINQ is built into .NET core, and it provides a powerful way to intract with data in a clean,readable,and concise way.LINQ queries are often executed lazily.
+With LINQ you can perform operations like filtering,sorting,grouping,joining. LINQ queries can be written using method syntax, query syntax which both internally compile to the same code.
+LINQ syntax - 
+- Query syntax - var query = FROM student in Students
+                 WHERE student.age >18
+                 ORDERBY student.lastName
+                 SELECT student;
+                 
+   * FROM is tha starting keyword
+   * WHERE filters the data based on the condition (age>18)
+   * ORDERBY sorts the data based on field lastName.Sort data in ascending or descending order.
+   * SELECT specified what to return in the result.Projects data into a new form or shape.
+
+ - Method syntax - var query = students.WHERE(s =>s.age>18)
+                              .ORDERBY(s=>s.lasName)
+                              .toList();  
+    * WHERE filters the data.
+    * ORDERBY sorts the data.
+    * ToList executes the query and converts the result into a list.
+There are some commonly used of LINQ operations :
+ i) Filtering data - Filters elements based on a condition. 
+        syntax :     var adults = students.WHERE(s=>s.age>18);
+ ii) Sorting data - Sort data in ascending or descending order. 
+        syntax :    var sortedStudents = students.OREDERBY(s=>s.lastName);
+ iii) Grouping data - Groups elements based on a key.
+        syntax :      var studentByGroup = students.GROUPBY(s=>s.age);
+ iv) Selecting data - Projects data into a new form or shape. 
+        syntax :      var names = students.SELECT(s=>s.name);
+ v) Aggregation data - Count : returns the number of elements.Count,Min,Max,Average : Perform calculations on a table.
+        syntax :       var totalCount = students.Sum(s=>s.age);
+                       var averageStudents = students.Average(s=>s.age);
+ vi) Joining data -  Joins two collections based on a key.
+        syntax :     var studentGardes = students.Join(grades,
+                      student=>student.StudentId,
+                      grade => grade.StudentId,
+                      (student,grade) =>new{student.name,grade.score});
+vii)Distinct values - Remove duplicate elements from the table.
+        syntax -      var distinctAges = students.Select(s=>s.age).Distinct();
+
+
+3) Stored procedure  - A stored procedure is a precompiled collection of one or more SQL statements that are stored and executed in a database.Stored procedures can be used to perform a variety of tasks such as data manipulation (INSERT, UPDATE and DELETE) complex queries and business logic. they can be called or executed from the applications, command-line-tools or other database queries.
+Stored procedures offer several benefits over writing individual SQL queries, including performance   
+
+key features of stored procedures - 
+i) Encapsulation of logic : You can encasulate complex business logic inside a stored procedure, making it easier to maintain and manage.
+ii) Performance : Stored procedures are precompiled and optimized by the database server.
+iii) Security : Stored procedures can control access to data.
+iv) Modularity : Stored procedure allow for modular programming, where you can break down a large operation into smaller, reusable procedures.
+v) Error handling : You can include error handling in stored procedures, making it easier to manage exceptions and handle failure gracefully.
+
+structure of stored procedure - 
+ * Procedure name : The name of the procedure used to invoke it.
+ * Parameters : Input Parameters (IN), output parameters(OUT), or input/output parameters (INOUT) that allow data to be passed into or out of the procedure.
+ * SQL statements : One or more SQL commands that are executed when the stored procedure invoked.
+ * Return type(optional) : In some databases, a stored procedure may return a value, but it is optional. for example, a status code indicating success or failure.
+
+ syntax :   CREATE PROCEDURE getUserCount(OUT totalUsers INT)
+            BEGIN
+             SELECT COUNT(*) INTO totalUsers
+             FROM users;
+            END
+
+Benefits of stored procedures -
+ i) Improved performance 
+   * Precompiled Performance - Since stored procedures are precompiled, the database does not need to parse and optimize the SQL every time it is called.
+   * Reduced Network Traffic - You can execute multiple SQL statement within a stored procedure in a single call, reducing the number of trips between application and database server.
+  ii) Security -
+   * Encapsulation 
+   * SQL Injection Protection
+  iii) Maintainability - 
+   * Centralized Logic - Business logic and data access login are encapsulated in staored procedures, maikng it easier to maintain and modify the logic in one place, rather than in a multiple parts of an application.
+   * Version control - You can manage changee to stored procedures through version control systems, just like you do with application code.
+  iv) Code Reusability - Once created stored procedures can be reused in multiple applications or by multiple developers without duplicating SQL logic.
+ 
+Use cases fr stored procedures
+i) Data Validation
+ii) Complex business logic
+iii) Batch Processing
+iv) Data Aggregation - Perform aggregate functions like calculating totals, agverages etc. across large datasets.
+v) Data migration and ETL - Stored procedures can be used for Extract, Trancform and Load(ETL) operations, moving and transforming data between systems.
+
+4) Triggers - Triggers are a typeof stored procedure that automatically execute.it is a set of instructions that are automatically executed when a specified database event occurs on a particular table. these events can occure when data is inserted, updated or deleted.
+
+There are several types of triggers - 
+i) BEFORE Trigger : Executes before an INSERT, UPDATE and DELETE operation on the table.
+ii) AFTER Trigger : Executes after an INSERT, UPDATE and DELETE operations on the table.
+
+There are three types of triggers -
+* INSERT - Triggered when a new row is inserted into the table.
+* UPDATE - Triggered when an existing row is updated.
+* DELETED - Triggerd when a row is deleted from the table.
+syntax -   CREATE TRIGGER tigger_name
+           { BEFORE | AFTER }
+           { INSERT | UPDATE | DELETE}
+           on table_name
+           FOR EACH ROW
+           BEGIN
+           --SQL statements to execute
+           END
+
+Advantages - * Automatic Execution
+             * Auditing and Logging
+             * Automating Complex Operations
+             * Centralized Logic
+Disadvantages - * Performance Overhead
+                * Harder to Debug
+                * Complexity and Maintenance
+                * Difficulty in Understanding Triggers for New Developrs             
+
+
+
+5) How to handle errors in .NET Core - In .NET Core and (ASP.NET Core), handling errors effectively is crucial for building robust and user-friendly applications.Error handling can be managed in a few ways, depending on the type of errors (exceptions) and the layer of the application (e.g. controller,service,middleware). 
+
+There are some types of error handling -
+i) Global Error Handling : Use middleware like 'UseExceptionHandler' to handle unhandled exceptions globally.
+ii) Custom Error handling Middleware : Implement custom error handling middleware to log and return meaningfull error responses.
+iii) Local Exception Handling : Use 'try-catch' blocks in controllers or service method to handle exceptions locally.
+iv) Exception Filter : Use exception filters for handling exceptions at a global level or on specific controllers.
+v) Custom Error Response : Return structured error response in JSON format to provide meaningful feedback o the client.
+vi) Logging : Always log exceptions so that you can track issues, especially in production environments. 

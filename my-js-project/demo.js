@@ -111,7 +111,7 @@ let reversestr = str.split('').reverse().join('');
 console.log(reversestr)
 //output : ?uoy era woH ,dlroW olleH
 
-// reverse string without create function
+// reverse string with create function
 // ---------------------------
 let strin = "Hello World, How are you?";
 function reverseString() {
@@ -173,7 +173,7 @@ factorial(number);
 //output : 51090942171709440000
 
 
-//ig given number prime or not
+//is given number prime or not
 
 let qa = 17;
 function primeNumber(number) {
