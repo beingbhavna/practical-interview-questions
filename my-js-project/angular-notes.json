@@ -1031,3 +1031,18 @@ Behavior: * await pauses the execution of the function until the Promise is sett
 
 - async functions always return a Promise.
 - await can be used inside async functions to wait for the resolution of a Promise and simplify working with asynchronous code.
+
+
+
+21) write a program to reverse string without using build-in methods
+        function reverseString(str) {
+          let reversedStr = '';
+          // Start at the last character and move towards the first
+          for (let i = str.length - 1; i >= 0; i--) {
+              reversedStr += str[i];
+          }
+          return reversedStr;
+      }
+      const originalString = 'Bhavna';
+      const resultString = reverseString(originalString);
+      console.log(resultString);  // Output: 'anavhB'

@@ -1,4 +1,6 @@
-1) Core Principles of react.js
+1) What is a react - 
+
+2) Core Principles of react.js
   React is one ofthe most popular javascript library for building user interface, especially for single-page applications where the UI needs to be fast, dynamic and responsive.Developed by facebook.
 
  i) Reacts Core Principles - 
@@ -86,13 +88,13 @@ iii) React's Ecosystem -
   - Cotext API 
 
                     
-2) Difference between functional and class components
+3) Difference between functional and class components
   * Functional Component - These are simpler and recommended approach in modern React with hooks.Functional        
                           components are written as javascript functions.A function that returns JSX.They can use hooks (like useState, useEffect) to manage state and side effects. These components are more lightweight and are typically used when you don't need lifecycle methods or advanced features.
   * Class Component -    Older style of components, though there are still widely used.Have more boilerplate code 
                          but can manage state and lifecycle methods directly.These are ES6 classes that extend React.component.They can have lifecycle methods (e.g componentDidMount, componentDidUpdate, coponentWillUnmount) to handle side effects and can maage state using 'this.setState'.
 
-3) Tokens in React.js
+4) Tokens in React.js
     Tokens in React can either be related to authentication (like JWTs for secure API access) or JSX structure (like tages,attributes, and components) The term 'token' can refer to two main concepts :
 
     i) Authentication Tokens -                        
@@ -108,7 +110,7 @@ iii) React's Ecosystem -
        * React Components - (e.g. <MyComponent/>).
        * Fragments - (denoted as <> </>)
 
-3) Stateful and Stateless - 
+5) Stateful and Stateless - 
   i) Stateful Components - 
    * Definition - A stateful component is a component that manage its own internal state. This means that the component can maintain and update its own data, which can influence its rendering.
    * State Management - These components utilize state to store data that can change over time. State is typically managed using the 'useState' hook (for functional component) or through the 'this.state' and 'this.setState' methods (for class components).
@@ -139,7 +141,11 @@ iii) React's Ecosystem -
     - Stateful: Used when a component needs to track user interactions or dynamic data.
     - Stateless: Used for components that only render data passed through props.
 
- 3) From componentDidMount, shouldComponentUpdate, and componentWillUnmount which method render first   
+ 6) From componentDidMount, shouldComponentUpdate, and componentWillUnmount which method render first   
    * componentDidMount runs first but only once.
    * shouldComponentUpdate is only relevant on updates, not on the first mount.
    * componentWillUnmount runs only once, at the end.
+
+ 7) Life Cycle Hookes -
+ 8) Optimize Performance -
+ 9) Write a program of counter and use life cycle hooks to update count.
