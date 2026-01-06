@@ -480,4 +480,4 @@ In a nutshell:
 23) How do you create custom directives 
 24) Component Interaction
 25) How to manage large data sets in Angular (pagination, virtual scrolling,store in service,localstorage and sessionstorage).
-26) inteceptors
+26) Rxjs operators
