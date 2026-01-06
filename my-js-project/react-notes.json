@@ -1,20 +1,20 @@
 1) What is a react - 
 
 2) Core Principles of react.js
-  React is one ofthe most popular javascript library for building user interface, especially for single-page applications where the UI needs to be fast, dynamic and responsive.Developed by facebook.
+  React is one of the most popular javascript library for building user interface, especially for single-page applications where the UI needs to be fast, dynamic and responsive.Developed by facebook.
 
  i) Reacts Core Principles - 
 
  * Component-Based Architecture - 
   - React is all about components. A react application is typically built as a tree of components, where each component is reusable, self-contained unit that renders a portion of UI.
-  - Components can be either stateful (managing their own state) oor stateless (receiving data from props).
-  Components can be functional or class-based, though modern react encoureges functional components (especially with hooks).
+  - Components can be either stateful (managing their own state) or stateless (receiving data from props).
+  Components can be functional or class-based, though modern react encourages functional components (especially with hooks).
   example of a functional component - 
                                     function welcome(props){
                                         return <h1>Hello, {props.name}</h1>;
                                     } 
 example of class-based component - 
-                                    clsss Welcome extends React.Component{
+                                    class Welcome extends React.Component{
                                         render(){
                                             return <h1>Hello, {this.props}</h1>
                                         }
@@ -89,16 +89,16 @@ iii) React's Ecosystem -
 
                     
 3) Difference between functional and class components
-  * Functional Component - These are simpler and recommended approach in modern React with hooks.Functional        
-                          components are written as javascript functions.A function that returns JSX.They can use hooks (like useState, useEffect) to manage state and side effects. These components are more lightweight and are typically used when you don't need lifecycle methods or advanced features.
-  * Class Component -    Older style of components, though there are still widely used.Have more boilerplate code 
-                         but can manage state and lifecycle methods directly.These are ES6 classes that extend React.component.They can have lifecycle methods (e.g componentDidMount, componentDidUpdate, coponentWillUnmount) to handle side effects and can maage state using 'this.setState'.
+  * Functional Component - These are simpler and recommended approach in modern React with hooks.Functional  
+                           components are written as javascript functions.A function that returns JSX.They can use hooks (like useState, useEffect) to manage state and side effects. These components are more lightweight and are typically used when you don't need lifecycle methods or advanced features.
+  * Class Component -    Older style of components, though there are still widely used.Have more boilerplate 
+                         code but can manage state and lifecycle methods directly.These are ES6 classes that extend React.component.They can have lifecycle methods (e.g componentDidMount, componentDidUpdate, coponentWillUnmount) to handle side effects and can manage state using 'this.setState'.
 
 4) Tokens in React.js
     Tokens in React can either be related to authentication (like JWTs for secure API access) or JSX structure (like tages,attributes, and components) The term 'token' can refer to two main concepts :
 
     i) Authentication Tokens -                        
-       * In web devalopment, tokens are commonly used for authentication and authorization. The most widely used type of token is the JWT (JSON Web Token), which is securely transmit information between the client (React-app) and the server. JWT tokens contain three parts : header, payload, and signature.
+       * In web development, tokens are commonly used for authentication and authorization. The most widely used type of token is the JWT (JSON Web Token), which is securely transmit information between the client (React-app) and the server. JWT tokens contain three parts : header, payload, and signature.
        * Another type of token is the OAuth token,often used in third party authentication flows. OAuth tokens allow the react app to intract with external APIs (e.g. Google, Facebook) without exposing user credentials.
        * These tokens are usually stored in sessionStorage, localStorage, or cookies, depending on security requirements.
        
