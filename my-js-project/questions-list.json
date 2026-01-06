@@ -1,0 +1,30 @@
+
+1) experience with entity framework core, LINQ, and Dapper
+2) exposure to CI/CD pipelines (GitHub Actions, Azure devops)
+3) understanding of angular state management(Ngrx)
+4) basic knowlwdge of Docker/ containerization
+5) good understanding of SDLC
+6) experience with authentication and authorization( JWT/ OAuth)
+7) T-SQL, stored procedures, triggers, views
+8) How do you optimize performance in an Angular application?
+9) Discuss lazy loading, Ahead-of-Time (AOT) compilation, tree-shaking, and change detection strategy optimizations.
+
+import {Pipe, PipeTransform} from '@angular/core';
+
+@Pipe({
+    name:'filterPipe'
+})
+export class FilterClassName implements PipeTransform{
+    transform(value:any[],searchText:string,propertyName:string):any[]{
+        if(!value || !searchText || !propertyName){
+            return value;
+        }
+        searchText = searchText.toLowerCase();
+        return value.filter(item =>{
+            if(item[propertyName]){
+                return item[propertyName].toLowerCase().includes(searchText);
+            }
+            return false;
+        });
+    }
+}
