@@ -570,4 +570,22 @@ Behavior: * await pauses the execution of the function until the Promise is sett
 22) Static and Dynamic type in js
 23) Which type of JS static or dynamic
 24) let, var, const 
-25) clousure in js with example
+25) clousure in js with example - A closure allows a inner functions can access variables of outer functions, even after the outer function has finished execution.
+                                        function outer() {
+                                        let count = 0;
+
+                                        return function inner() {
+                                            count++;
+                                            console.log(count);
+                                        };
+                                        }
+
+                                        const counter = outer();
+                                        counter(); // 1
+                                        counter(); // 2
+                                        counter(); // 3
+ - Why Closures Are Important
+   * Data hiding (encapsulation)
+   * Used in callbacks, promises, event handlers
+   * State management
+   * Factory functions
