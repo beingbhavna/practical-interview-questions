@@ -193,8 +193,7 @@ iii) Router Outlet - The <router-outlet> directive acts as a palceholder in the 
 iv) Router Links - The routerLink directive is used to create navigation links within the application.
 v) Route Matching Strategies - Angular support different route matching strategies like - 'prefix, full'.
 vi) Route Parameters and Query Params - Information can be passed between components through route parameters.
-vii) Guards - Route guard can be used to control access to routes based on centain conditions (e.g. authentication, 
-     authorization).
+vii) Guards - Route guard can be used to control access to routes based on centain conditions (e.g. authentication,authorization).
 viii) Lazy Loading - Routing can be configuared to lazy-load modules, improving initial application load times by 
       loading the necessary code when a specific route is activated.
 
@@ -481,3 +480,20 @@ In a nutshell:
 24) Component Interaction
 25) How to manage large data sets in Angular (pagination, virtual scrolling,store in service,localstorage and sessionstorage).
 26) Rxjs operators
+
+27) Crud in angular - 
+  👉 CRUD in Angular is implemented using HttpClient through services to create, read, update, and delete data from backend APIs using Observables.
+ CRUD stands for:
+  ✔ Create   (Create Service (API Layer – Best Practice) 📁user.service.ts)CREATE – Add Data (Reactive Form)
+  ✔ Read     (READ – Get & Display Data Data 📁user.component.ts,📁user.component.html)
+  ✔ Update    (UPDATE – Edit Data by userId)
+  ✔ Delete    (DELETE – Remove Data by userId)
+
+28) Entry point and exit point in angular  -  index.html
+                                                  ↓
+                                                main.ts
+                                                  ↓
+                                                AppModule
+                                                  ↓
+                                                AppComponent
+🔹 ngOnDestroy() – Exit Point of Component
