@@ -497,3 +497,25 @@ In a nutshell:
                                                   ↓
                                                 AppComponent
 🔹 ngOnDestroy() – Exit Point of Component
+29) Authentication and Authorization - 
+   👉 Authentication = WHO you are - It verifies user identity using: (Username & password, OTP, Token, Biometrics).
+   Authentication Flow (Angular + Backend) : Login Form
+                                                ↓
+                                              Backend verifies credentials
+                                                ↓
+                                              JWT token generated
+                                                ↓
+                                              Token stored (localStorage/sessionStorage)
+                                                ↓
+                                              User authenticated
+
+   👉 Authorization = WHAT you are allowed to do - Happens after authentication.Authorization controls access.
+   👉 Authentication is the process of verifying the identity of a user, while Authorization is the process of determining what resources or actions a user is allowed to access based on their authenticated identity.
+
+| Feature | Authentication      | Authorization        |
+| ------- | ------------------- | -------------------- |
+| Meaning | Who you are         | What you can do      |
+| Order   | First               | After authentication |
+| Example | Login               | Role access          |
+| Failure | Invalid credentials | Access denied        |
+| Data    | Token               | Roles/permissions    |
