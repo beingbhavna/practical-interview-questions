@@ -3,7 +3,7 @@
 
 
 1) JavaScript - Javascript is a high-level interpreted programming language,primarily used for creating 
-   dynamic and interactive content in web-pages. ite was developed in 1990s.
+   dynamic and interactive content in web-pages. it was developed in 1990s.
 
 Key aspects of javascript - 
 
@@ -15,15 +15,13 @@ iii) Versatility - Beyond web development, javascript is also used in areas such
      (with framework like React Native), desktop applications (with Electron), and game development.
 iv) Ecosystem - Javascript boosts a vast ecosystem of frameworks and libraries (e.g. React,Angular, Vue.js,
     jQuery,Express.js) that provide pre-build functionality.
-v) Integration - It integrates seamlessly with HTML (for structure) and CSS (for styling) to create a complete 
-   and interactive web experience.
-vi) Asynchromous Nature (Non-Blocking)
+v) Integration - It integrates seamlessly with HTML (for structure) and CSS (for styling) to create a complete and interactive web experience.
+vi) Asynchronous Nature (Non-Blocking)
 vii) Object-Oriented and Functional
 viii) Runs in the browser
 
 2) JavaScript Evaluation - 
-i) Evaluation of expressions in js - (In js expressions are evaluated in a specific order to produce a result. 
-   these can be a simple expressions like numbers, or complex expressions like function calls,assignments and conditionals. let a = 5 + 10; )
+i) Evaluation of expressions in js - (In js expressions are evaluated in a specific order to produce a result.these can be a simple expressions like numbers, or complex expressions like function calls,assignments and conditionals. let a = 5 + 10; )
 ii)  Execution context and call stack -(The environment where code runs and how functions are placed on the call stack)
 iii) Hoisting - (How declarations are moved to the top of their scope).
 iv) Scope and Lexical environment - (How variables are evaluated on their scope).
@@ -87,7 +85,7 @@ x) Map and Set - ES6 introduce two new collection types.
                 set.add(1);  // Won't add duplicate values
                 console.log(set);  // Outputs: Set {1, 2}
 
-4) Contructors - Before ES6 JS didn't have a build-in class syntax.We used constrctor functions to create objects.A constructor is a special method used within a class to create and initialize objects.It is automatically called when a new instance of the class is created using 'new' keyword.
+4) Contructors - Before ES6 JS didn't have a build-in class syntax.We used constructor functions to create objects.A constructor is a special method used within a class to create and initialize objects.It is automatically called when a new instance of the class is created using 'new' keyword.
 Key characterstics - 
 i) Initialization - The purpose of a constructor is to set up the initial state of a newly created object.
 ii) 'this' keyword - Inside a constructor, 'this' keyword refers to the newly created instance of the class.
