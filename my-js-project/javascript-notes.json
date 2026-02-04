@@ -85,7 +85,7 @@ x) Map and Set - ES6 introduce two new collection types.
                 set.add(1);  // Won't add duplicate values
                 console.log(set);  // Outputs: Set {1, 2}
 
-4) Contructors - Before ES6 JS didn't have a build-in class syntax.We used constructor functions to create objects.A constructor is a special method used within a class to create and initialize objects.It is automatically called when a new instance of the class is created using 'new' keyword.
+4) Constructors - Before ES6 JS didn't have a build-in class syntax.We used constructor functions to create objects.A constructor is a special method used within a class to create and initialize objects.It is automatically called when a new instance of the class is created using 'new' keyword.
 Key characterstics - 
 i) Initialization - The purpose of a constructor is to set up the initial state of a newly created object.
 ii) 'this' keyword - Inside a constructor, 'this' keyword refers to the newly created instance of the class.
@@ -103,7 +103,7 @@ example -
                         const john = new Person("John Doe", 30);
                         john.introduce(); // Output: Hello, my name is John Doe and I am 30 years old.
 
-5) Constant - 'const' isused to declare constants, which are variables whose values can not be reassigned after their initialization.It is part of ES6 (ECMAScript 15) and offers better control over variable mutability compared to 'var' and 'let'.
+5) Constant - 'const' is used to declare constants, which are variables whose values can not be reassigned after their initialization.It is part of ES6 (ECMAScript 15) and offers better control over variable mutability compared to 'var' and 'let'.
  syntax - const variableName = value;
  -'const' is followed by variable name and then the value.
 
@@ -116,8 +116,6 @@ i) Block Scoping - Just like let , const is block scoped, variable exists only w
                       console.log(name);  // ReferenceError: name is not defined
 
 ii) Cannot Be Reassigned - Variable declared with const can not be reassigned once they have been initialized.
-
-
 Comparison between const, let and var - 
 
 i) var -
@@ -145,7 +143,7 @@ iii) const -
 6) TDZ (Temporal Dead Zone) - Temporal Dead Zone in javascript refers to a specific period during the execution of the code where variables declared with the 'let', 'const' keywords are inaccessible.
 This zone exists between the begninning of the scope( typically a block) where the variable is declared and the actual point of its declaration and initialization within that scope.
 
-in another words we can can say that The Temporal Dead Zone ia a behaviour that occurs in javascript when trying to access variablea declared with 'let', 'const' before they are initialized
+in another words we can can say that The Temporal Dead Zone ia a behaviour that occurs in javascript when trying to access variables declared with 'let', 'const' before they are initialized
 
 console.log(a); //ReferenceError: can not access 'a' before initialization
 let a = 10; 
@@ -574,9 +572,7 @@ Behavior: * await pauses the execution of the function until the Promise is sett
           }
           return reversedStr;
       }
-      const originalString = 'Bhavna';
-      const resultString = reverseString(originalString);
-      console.log(resultString);  // Output: 'anavhB'
+      console.log(reverseString('Bhavna'));  // Output: 'anavhB'
 22) Static and Dynamic type in js
 23) Which type of JS static or dynamic
 24) let, var, const 
