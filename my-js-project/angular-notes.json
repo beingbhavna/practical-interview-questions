@@ -515,3 +515,31 @@ In a nutshell:
 | Example | Login               | Role access          |
 | Failure | Invalid credentials | Access denied        |
 | Data    | Token               | Roles/permissions    |
+
+30) setValue and patchValue in reactive forms - 
+   👉 setValue - You can set the value of a form control using the setValue() method. This method requires you to provide a value for every control in the form group.
+   👉 patchValue - You can update the value of a form control using the patchValue() method. This method allows you to update only specific controls in the form group without providing values for all controls.
+ 
+31) setValidators and patchValidators in reactive forms - 
+   👉 setValidators - This method is used to set new validators for a form control. It replaces any existing validators with the new ones provided.
+   👉 patchValidators - This method is used to add or update validators for a form control without replacing the existing ones. It allows you to modify the validation rules incrementally.   
+
+32) Rxjs operators - switchMap, mergeMap, concatMap   
+33)route params (is route guard share data one directional or bi directional)
+34)auth guards
+35) eager loading and lazy loading
+36) forkjoin and if one request is fail then what will happen - 
+   👉 forkJoin is an RxJS operator that allows you to execute multiple observables in parallel and wait for all of them to complete before emitting a single combined result. If any of the observables passed to forkJoin fail (emit an error), the entire forkJoin will fail and emit that error. The successful results from the other observables will not be emitted, and the error will be propagated to the subscriber.
+
+
+
+   how we can do better performance in angular
+dependency injection in angular and .net
+what is the difference b/w .net core and 
+what is the rest api and 
+how we can do error handle in angular
+middleware
+reactive and driven forms
+
+delete,truncate and drop
+indexing
