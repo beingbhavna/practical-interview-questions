@@ -614,3 +614,51 @@ Behavior: * await pauses the execution of the function until the Promise is sett
 | Operators | Limited        | Powerful (RxJS) |
 | Retry     | Manual         | Built-in        |
 | Use case  | One-time async | Streams/events  |
+
+
+
+for(var i=0; i<3;i++){
+setTimeout(()=>{console.log(i)},0)
+}
+ 
+0,1,2
+ 
+console.log('0' && 0)
+ 
+of(1,2,3).pipe(
+filter(v=>v%2)
+).subscribe(v=>console.log(v));
+ 
+const users = [
+
+  { id: 1, name: "Alice", age: 28, role: "developer", active: true },
+
+  { id: 2, name: "Bob", age: 35, role: "manager", active: false },
+
+  { id: 3, name: "Alice", age: 30, role: "developer", active: true },
+
+  { id: 4, name: "David", age: 24, role: "designer", active: false },
+
+  { id: 5, name: "Bob", age: 40, role: "manager", active: true },
+
+];
+ 
+
+
+
+const users = [
+
+  { id: 1, name: "Alice", age: 28, role: "developer", active: true },
+
+  { id: 2, name: "Bob", age: 35, role: "manager", active: false },
+
+  { id: 3, name: "Alice", age: 30, role: "developer", active: true },
+
+  { id: 4, name: "David", age: 24, role: "designer", active: false },
+
+  { id: 5, name: "Bob", age: 40, role: "manager", active: true },
+
+];
+
+const uniqueByName = users.filter((res,index,self)=> index == self.findIndex((t) => t.name == res.name));
+console.log(uniqueByName)
